@@ -1,0 +1,19 @@
+::placeholder {
+  color: #2E2F42;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.64px;
+}
+input {
+  width: 360px;
+  margin: 24px 0 0 24px;
+  padding: 8px 0 8px 16px;
+}
+h1 {
+  margin: 16px 0 24px 24px;
+  color: #2E2F42;
+font-size: 24px;
+font-weight: 600;
+line-height: 32px;
+letter-spacing: 0.96px;
+}

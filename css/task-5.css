@@ -1,0 +1,34 @@
+div {
+  display: inline-flex;
+padding: 100px 88px;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+border-radius: 8px;
+background: #FFF;
+}
+p {
+  color: #2E2F42;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.64px;
+margin: 0;
+}
+button {
+  color: #2E2F42;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.64px;
+display: flex;
+padding: 8px 16px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border: none;
+border-radius: 8px;
+background: #4E75FF;
+margin: 0;
+}
+button:hover {
+  background: #6C8CFF;
+}

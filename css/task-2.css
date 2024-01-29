@@ -1,0 +1,17 @@
+
+  .img {
+    display: block;
+    width: 360px;
+    height: 300px;
+    flex-shrink: 0;
+    }
+    .gallery {
+      list-style-type: none;
+      display: flex;
+padding: 100px 156px;
+flex-direction: row;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 48px;
+flex-wrap: wrap;
+    }
