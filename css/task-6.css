@@ -48,6 +48,9 @@ border-radius: 8px;
 border: none;
 background: #4E75FF;
 }
+button:hover {
+  background: #6C8CFF;
+}
 .red {
 background: #FF4E4E;
 }

@@ -1,26 +1,36 @@
-const box = document.querySelector(".box");
-const buttonCreate = document.querySelector("button[data-create]")
-const buttonDestroy = document.querySelector("button[data-destroy]")
-const input = document.querySelector("input")
-
-buttonCreate.addEventListener("click", () => {
-    if (Number(input.value) >= 1 && Number(input.value) <= 100) {
-        createBoxes(Number(input.value));
+const refs = {
+    amountEl: document.querySelector('#controls input'),
+    createEl: document.querySelector('button[data-create]'),
+    destroyEl: document.querySelector('button[data-destroy]'),
+    boxesEl: document.querySelector('#boxes'),
+  };
+  refs.createEl.addEventListener('click', onCreateClick);
+  refs.destroyEl.addEventListener('click', onDestroyClick);
+  function onCreateClick() {
+    let amount = refs.amountEl.value;
+    if (amount < 1 || amount > 100) {
+      return alert(
+        'Ooops, something go wrong!!! The value must be less than 100'
+      );
     }
-})
-
-buttonDestroy.addEventListener("click", destroyBoxes)
-
-function createBoxes(el) {
-    let startSize = 10;
-    let divArr = [];
-    for (let i = 0; i < el; i += 1) {
-       const div = `<div class"box-mini" style="background-color: ${getRandomHexColor()};
-       display: block; margin: 0 20px 0 20px;
-       width: ${startSize}px; height: ${startSize}px;"></div>`;
-       divArr.push(div);
-       startSize += 10;
+    onDestroyClick();
+    createBoxes(amount);
+  }
+  function onDestroyClick() {
+    refs.boxesEl.innerHTML = '';
+    refs.amountEl.value = '';
+  }
+  function createBoxes(amount) {
+    for (let i = 0; i < amount; i++) {
+      let elem = document.createElement('div');
+      elem.style.width = 30 + 10 * i + 'px';
+      elem.style.height = 30 + 10 * i + 'px';
+      elem.style.backgroundColor = getRandomHexColor();
+      refs.boxesEl.append(elem);
     }
-    box.insertAdjacentHTML("beforeend", divArr.join(""));
-    input.value = "";
-}
+  }
+  function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, 0)}`;
+  }
