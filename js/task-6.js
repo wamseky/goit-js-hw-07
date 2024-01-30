@@ -9,9 +9,7 @@ const refs = {
   function onCreateClick() {
     let amount = refs.amountEl.value;
     if (amount < 1 || amount > 100) {
-      return alert(
-        'Ooops, something go wrong!!! The value must be less than 100'
-      );
+      return undefined
     }
     onDestroyClick();
     createBoxes(amount);
